@@ -1,1 +1,22 @@
+# Environment — НІКОЛИ не комітити
+.env
+.env.local
+.env.production
 
+# Dependencies
+node_modules/
+
+# Build
+dist/
+.netlify/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
