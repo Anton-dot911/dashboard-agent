@@ -47,7 +47,7 @@ const AGENTS = [
     icon: "◆",
     color: "#0A1628",
     colorLight: "#1E3A5F",
-    url: "https://trade-agent.netlify.app",
+    url: "https://trader-agent.netlify.app",
     lastRec: "BTC — сигнал BUY, RSI 62",
     confidence: 81,
     confirmRate: 76,
