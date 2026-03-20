@@ -131,7 +131,7 @@ export default function Dashboard() {
         {/* HEADER */}
         <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", marginBottom:22 }}>
           <div>
-            <div style={{ fontSize:10, letterSpacing:"4px", color:"#8A9BB0", marginBottom:5, fontWeight:500 }}>
+            <div style={{ fontSize:10, letterSpacing:"4px", color:"#4A6B85", marginBottom:5, fontWeight:500 }}>
               PROFIT AGENT SYSTEM · v2
             </div>
             <div style={{ fontSize:"clamp(20px,3vw,30px)", fontWeight:800, color:"#0A1628", letterSpacing:"-0.5px", lineHeight:1, fontFamily:"'Syne', sans-serif" }}>
@@ -139,7 +139,7 @@ export default function Dashboard() {
             </div>
           </div>
           <div style={{ display:"flex", alignItems:"center", gap:8 }}>
-            <div style={{ fontSize:11, color:"#6A7E96", padding:"6px 13px", background:"rgba(255,255,255,0.65)", borderRadius:20, border:"1px solid rgba(255,255,255,0.85)" }}>
+            <div style={{ fontSize:11, color:"#3A5570", padding:"6px 13px", background:"rgba(255,255,255,0.65)", borderRadius:20, border:"1px solid rgba(255,255,255,0.85)" }}>
               {time.toLocaleTimeString("uk-UA", { hour:"2-digit", minute:"2-digit", second:"2-digit" })}
             </div>
             <div style={{ width:34, height:34, borderRadius:"50%", background:"rgba(255,255,255,0.72)", border:"1.5px solid rgba(255,255,255,0.92)", display:"flex", alignItems:"center", justifyContent:"center", boxShadow:"0 2px 12px rgba(0,200,120,0.18)" }}>
@@ -167,7 +167,7 @@ export default function Dashboard() {
               </div>
               <div>
                 <div style={{ fontSize:19, fontWeight:800, color:"#0A1628", lineHeight:1, fontFamily:"'Syne', sans-serif" }}>{s.value}</div>
-                <div style={{ fontSize:9, color:"#8A9BB0", marginTop:3, letterSpacing:"1px" }}>{s.label.toUpperCase()}</div>
+                <div style={{ fontSize:9, color:"#4A6B85", marginTop:3, letterSpacing:"1px" }}>{s.label.toUpperCase()}</div>
               </div>
             </div>
           ))}
@@ -258,12 +258,12 @@ export default function Dashboard() {
 
           {/* Activity feed */}
           <div style={{ background:"rgba(255,255,255,0.52)", border:"1.5px solid rgba(255,255,255,0.88)", borderRadius:20, padding:"16px 18px", boxShadow:"0 2px 18px rgba(80,100,140,0.07)" }}>
-            <div style={{ fontSize:10, letterSpacing:"3px", color:"#8A9BB0", marginBottom:12, fontWeight:500 }}>ACTIVITY FEED</div>
+            <div style={{ fontSize:10, letterSpacing:"3px", color:"#4A6B85", marginBottom:12, fontWeight:500 }}>ACTIVITY FEED</div>
             {ACTIVITY.map((a,i) => (
               <div key={i} style={{ display:"flex", alignItems:"center", gap:10, padding:"8px 0", borderBottom: i < ACTIVITY.length-1 ? "1px solid rgba(0,0,0,0.045)" : "none", animation:`fadeUp 0.4s ease ${i*0.07}s both` }}>
-                <div style={{ fontSize:10, color:"#A0B0C0", width:36, flexShrink:0 }}>{a.time}</div>
+                <div style={{ fontSize:10, color:"#5A7A92", width:36, flexShrink:0 }}>{a.time}</div>
                 <div style={{ width:7, height:7, borderRadius:"50%", background:agentColor(a.agent), flexShrink:0, boxShadow:`0 0 5px ${agentColor(a.agent)}` }} />
-                <div style={{ flex:1, fontSize:12, color:"#3A5068" }}>{a.action}</div>
+                <div style={{ flex:1, fontSize:12, color:"#1A3A52" }}>{a.action}</div>
                 <div style={{ fontSize:10, padding:"2px 7px", borderRadius:10, flexShrink:0, background: a.decision==="confirmed" ? "rgba(0,229,160,0.11)" : "rgba(255,77,106,0.09)", color: a.decision==="confirmed" ? "#00B882" : "#FF4D6A", border:`1px solid ${a.decision==="confirmed" ? "rgba(0,229,160,0.2)" : "rgba(255,77,106,0.18)"}` }}>
                   {a.decision === "confirmed" ? "✓" : "✕"}
                 </div>
@@ -276,12 +276,12 @@ export default function Dashboard() {
 
             {/* Status */}
             <div style={{ background:"rgba(255,255,255,0.52)", border:"1.5px solid rgba(255,255,255,0.88)", borderRadius:20, padding:"14px 16px", boxShadow:"0 2px 18px rgba(80,100,140,0.07)" }}>
-              <div style={{ fontSize:10, letterSpacing:"3px", color:"#8A9BB0", marginBottom:10, fontWeight:500 }}>STATUS</div>
+              <div style={{ fontSize:10, letterSpacing:"3px", color:"#4A6B85", marginBottom:10, fontWeight:500 }}>STATUS</div>
               {AGENTS.map(agent => (
                 <div key={agent.id} style={{ display:"flex", alignItems:"center", gap:7, marginBottom:8 }}>
                   <div style={{ width:7, height:7, borderRadius:"50%", background: agent.dataSource === "live" ? "#00E5A0" : "#FFB830", flexShrink:0, animation:"blink 2s infinite" }} />
-                  <div style={{ fontSize:11, color:"#3A5068", flex:1 }}>{agent.name}</div>
-                  <div style={{ fontSize:9, color: agent.dataSource === "live" ? "#00B882" : "#8A9BB0" }}>
+                  <div style={{ fontSize:11, color:"#1A3A52", flex:1 }}>{agent.name}</div>
+                  <div style={{ fontSize:9, color: agent.dataSource === "live" ? "#00B882" : "#4A6B85" }}>
                     {agent.dataSource === "live" ? "LIVE" : "MOCK"}
                   </div>
                 </div>
@@ -300,13 +300,13 @@ export default function Dashboard() {
             {/* Agents online */}
             <div style={{ background:"linear-gradient(135deg,#1A56FF1A,#1A56FF08)", border:"1.5px solid #1A56FF1E", borderRadius:14, padding:"13px 14px", textAlign:"center" }}>
               <div style={{ fontSize:26, fontWeight:800, color:"#1A56FF", fontFamily:"'Syne', sans-serif" }}>3/3</div>
-              <div style={{ fontSize:9, color:"#8A9BB0", letterSpacing:"2px", marginTop:4 }}>AGENTS ONLINE</div>
+              <div style={{ fontSize:9, color:"#4A6B85", letterSpacing:"2px", marginTop:4 }}>AGENTS ONLINE</div>
             </div>
 
             {/* Live count */}
             <div style={{ background:"linear-gradient(135deg,#00E5A01A,#00E5A008)", border:"1.5px solid #00E5A01E", borderRadius:14, padding:"13px 14px", textAlign:"center" }}>
               <div style={{ fontSize:26, fontWeight:800, color:"#00E5A0", fontFamily:"'Syne', sans-serif" }}>{liveCount}/3</div>
-              <div style={{ fontSize:9, color:"#8A9BB0", letterSpacing:"2px", marginTop:4 }}>LIVE DATA</div>
+              <div style={{ fontSize:9, color:"#4A6B85", letterSpacing:"2px", marginTop:4 }}>LIVE DATA</div>
             </div>
           </div>
         </div>
